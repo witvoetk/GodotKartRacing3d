@@ -99,7 +99,7 @@ func _process(delta):
 	
 	# rotate car mesh
 	if ball.linear_velocity.length() > TURN_STOP_LIMIT:
-		# \/ idk how exactly this works \/ but it "turns" the car based on how fast its going up to a max turn speed
+		# \/ turns the car based on how fast its going up to a max turn speed
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, rotate_input)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, TURN_SPEED * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
